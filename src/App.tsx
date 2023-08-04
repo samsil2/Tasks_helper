@@ -24,6 +24,7 @@ const App: React.FC = () => {
     <div className="App">
       <span className='heading'> Task Helper</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      {/* {<TodoList/>} */}
     </div>
   );
 }
