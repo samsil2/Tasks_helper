@@ -9,13 +9,14 @@ const App: React.FC = () => {
 
   const [todo, setTodo] = useState<string>("");
   const [todos,setTodos] = useState<Todo[]>([]);
+ 
 
   const handleAdd = (e: React.FormEvent) =>{
     e.preventDefault();
 
     if (todo) {
       setTodos([...todos, { id: Date.now(), todo, isDone: false }]);
-      setTodo("");
+      setTodo(""); //make the form empty after submiting
     }
 
   }
@@ -26,7 +27,8 @@ const App: React.FC = () => {
       <span className='heading'> Task Helper</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
 
-      {<TodoList/>}
+      {/* {<TodoList/>} */}
+      <TodoList todos={todos} setTodos={setTodos}  />
     
 
     </div>
